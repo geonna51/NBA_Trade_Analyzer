@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Analysis</title>
+    <link rel="stylesheet" href="../static/css/analysis.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Trade Analysis</h1>
+        <div class="trade-container">
+            <div class="left-side">
+                <h2>Left Team</h2>
+                {% for player in left_team %}
+                    <div class="player-item">
+                        <img src="{{ url_for('static', filename='nba_headshots/' + player.player_id|string + '.png') }}" alt="{{ player.player_name }}">
+                        <div class="player-info">
+                            <span class="player-name">{{ player.player_name }}</span>
+                            <div class="player-worth">
+                                {{ player.player_worth }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <p class="total-worth">Total Worth: {{ left_worth }}</p>
+                {% if winner == 'left' %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1200px-Eo_circle_green_checkmark.svg.png" alt="Winner" class="result-bubble">
+                {% elif winner == 'tie'%}
+                    <img src="https://cdn-icons-png.flaticon.com/512/11847/11847041.png" alt="Tie" class="result-bubble"> 
+                {% else %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/1200px-Cross_red_circle.svg.png" alt="Loser" class="result-bubble">
+                {% endif %}
+            </div>
+
+            <div class="right-side">
+                <h2>Right Team</h2>
+                {% for player in right_team %}
+                    <div class="player-item">
+                        <img src="{{ url_for('static', filename='nba_headshots/' + player.player_id|string + '.png') }}" alt="{{ player.player_name }}">
+                        <div class="player-info">
+                            <span class="player-name">{{ player.player_name }}</span>
+                            <div class="player-worth">
+                                {{ player.player_worth }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <p class="total-worth">Total Worth: {{ right_worth }}</p>
+                {% if winner == 'right' %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1200px-Eo_circle_green_checkmark.svg.png" alt="Winner" class="result-bubble">
+                {% elif winner == 'tie'%}
+                    <img src="https://cdn-icons-png.flaticon.com/512/11847/11847041.png" alt="Tie" class="result-bubble">
+                {% else %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/1200px-Cross_red_circle.svg.png" alt="Loser" class="result-bubble">
+                {% endif %}
+            </div>
+        </div>
+
+        <a href="{{ url_for('front_page') }}" class="back-button">Start a New Trade</a>
+        <button class="modify">Modify Trade</button>
+
+    </div>
+</body>
+</html>

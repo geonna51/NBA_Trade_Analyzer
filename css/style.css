@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.trade-container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left-side {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+}
+
+.right-side {
+    background: #ecf0f1;
+}
+
+.search-container {
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-box {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+}
+
+.search-box::placeholder {
+    color: #7f8c8d;
+}
+
+.instruction {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.analyze-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.analyze-button:hover {
+    background-color: #c0392b;
+}
+
+.analyze-button img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.result {
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.result img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.result p {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.result p:last-child {
+    border-bottom: none;
+}
+
+.result p:hover {
+    background-color: #f0f0f0;
+}
+
+.result-item{
+    cursor:pointer;
+    display: inline-block;
+
+}
+.result-item:hover{
+    background-color:#7f8c8d
+}
+.error-message{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    border: 1px solid #f5c2c7;
+    border-radius: 8px;
+    background-color: #f8d7da;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    z-index: 9999;  
+}
+.error-icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.result-bubble {
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+}
+.okay-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #85d4ff;  /* Light blue background color */
+    color: #5a5a5a;  /* White text color */
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a raised effect */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.okay-button:hover {
+    background-color: #2eb0fc;  /* Slightly darker blue on hover */
+}
+.hidden{
+    display: none;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Basketball Trade Analyzer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Fantasy Basketball Trade Analyzer</h1>
+        <div id="error-message" class="error-message hidden">
+            <div class="error-icon">
+                <svg viewBox="0 0 24 24" width="48" height="48">
+                    <circle cx="12" cy="12" r="11" fill="#dc3545" />
+                    <path d="M15.536 8.464a1 1 0 0 0-1.414 0L12 10.586l-2.122-2.122a1 1 0 0 0-1.414 1.414L10.586 12l-2.122 2.122a1 1 0 1 0 1.414 1.414L12 13.414l2.122 2.122a1 1 0 0 0 1.414-1.414L13.414 12l2.122-2.122a1 1 0 0 0 0-1.414z" fill="#fff"/>
+                </svg>
+            </div>
+            <h2>Error!</h2>
+            <p>There needs to be at least one player on both sides of the trade.</p>
+            <button class="okay-button">Okay</button>
+        </div>
+        <div class="trade-container">
+            <div class="left-side">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Player Name" id="searchbox1-left">
+                    <div class="result" id="result1-left"></div>
+                    <p class="instruction">Start typing to select a player...</p>
+                    <input type="text" class="search-box" placeholder="Player Two" id="searchbox2-left"> 
+                    <div class="result" id="result2-left"></div>
+                    <input type="text" class="search-box" placeholder="Player Three" id="searchbox3-left">
+                    <div class="result" id="result3-left"></div>
+                    <input type="text" class="search-box" placeholder="Player Four" id="searchbox4-left">
+                    <div class="result" id="result4-left"></div>
+                    <input type="text" class="search-box" placeholder="Player Five" id="searchbox5-left">
+                    <div class="result" id="result5-left"></div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Player Name" id="searchbox1-right">
+                    <div class="result" id="result1-right"></div>
+                    <p class="instruction">Start typing to select a player...</p>
+                    <input type="text" class="search-box" placeholder="Player Two" id="searchbox2-right">
+                    <div class="result" id="result2-right"></div>
+                    <input type="text" class="search-box" placeholder="Player Three" id="searchbox3-right">
+                    <div class="result" id="result3-right"></div>
+                    <input type="text" class="search-box" placeholder="Player Four" id="searchbox4-right">
+                    <div class="result" id="result4-right"></div>
+                    <input type="text" class="search-box" placeholder="Player Five" id="searchbox5-right">
+                    <div class="result" id="result5-right"></div>
+                </div>
+            </div>
+        </div>
+        <button class="analyze-button">
+            <img src="https://a.espncdn.com/combiner/i?img=/i/fantasy/fba.png&w=288&h=288&transparent=true" alt="NBA logo">
+            ANALYZE TRADE
+        </button>
+    </div>
+</body>
+</html>
